@@ -32,6 +32,8 @@ dependencies {
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    implementation ("io.springfox:springfox-boot-starter:3.0.0")
+    implementation ("io.springfox:springfox-swagger-ui:3.0.0")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("com.mysql:mysql-connector-j")
@@ -39,6 +41,9 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.springframework.security:spring-security-test")
+
+    // jasypt 암호화
+    implementation ("com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4")
 }
 
 tasks.withType<KotlinCompile> {

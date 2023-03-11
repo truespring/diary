@@ -1,0 +1,27 @@
+spring:
+  config:
+    activate:
+      on-profile: ${PROFILE}
+
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: ${JDBC_URL}
+      username: ${JDBC_NAME}
+      password: ${JDBC_PASSWORD}
+      pool-name: cp-admin-local
+      minimum-idle: ${MIN_IDEL}
+      maximum-pool-size: ${MAX_POOL_SIZE}
+      validation-timeout: 1000
+      connection-timeout: 3000
+      connection-test-query: 'select 1'
+  jpa:
+    database: mysql
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+    show-sql: true
