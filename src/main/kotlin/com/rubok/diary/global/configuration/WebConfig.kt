@@ -1,14 +1,14 @@
 package com.rubok.diary.global.configuration
 
+import com.rubok.diary.global.interceptor.CustomInterceptor
 import org.springframework.context.annotation.Configuration
-import org.springframework.web.servlet.config.annotation.CorsRegistry
-import org.springframework.web.servlet.config.annotation.EnableWebMvc
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
+import org.springframework.web.servlet.config.annotation.*
 
 @EnableWebMvc
 @Configuration
-class WebConfig : WebMvcConfigurer {
+class WebConfig(
+    private val customInterceptor: CustomInterceptor
+) : WebMvcConfigurer {
     override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
         registry.addResourceHandler("/swagger-ui/**")
             .addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/")
@@ -22,5 +22,10 @@ class WebConfig : WebMvcConfigurer {
             .allowedHeaders("*")
             .allowCredentials(true)
             .maxAge(3600)
+    }
+
+    override fun addInterceptors(registry: InterceptorRegistry) {
+        registry.addInterceptor(customInterceptor)
+            .addPathPatterns("/**")
     }
 }

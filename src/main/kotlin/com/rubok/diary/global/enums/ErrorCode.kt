@@ -1,4 +1,4 @@
-package com.rubok.diary.global.response
+package com.rubok.diary.global.enums
 
 import lombok.Getter
 import lombok.RequiredArgsConstructor

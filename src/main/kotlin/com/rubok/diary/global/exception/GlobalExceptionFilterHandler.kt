@@ -1,6 +1,6 @@
 package com.rubok.diary.global.exception
 
-import com.rubok.diary.global.response.ErrorCode
+import com.rubok.diary.global.enums.ErrorCode
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
