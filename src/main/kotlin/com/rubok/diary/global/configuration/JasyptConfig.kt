@@ -10,12 +10,9 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class JasyptConfig {
 
+    @Value("\${jasypt.encryptor.password}")
     var password: String = ""
 
-    @Value("\${jasypt.encryptor.password}")
-    fun run(key: String) {
-        password = key
-    }
 
     @Value("\${jasypt.encryptor.algorithm}")
     var algorithm: String = ""

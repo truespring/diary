@@ -20,7 +20,6 @@ class WebConfig(
             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
             .allowedOrigins("*")
             .allowedHeaders("*")
-            .allowCredentials(true)
             .maxAge(3600)
     }
 
