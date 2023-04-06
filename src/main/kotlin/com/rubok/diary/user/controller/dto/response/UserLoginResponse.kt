@@ -1,6 +1,6 @@
 package com.rubok.diary.user.controller.dto.response
 
 data class UserLoginResponse(
-    val userId: String,
+    val email: String,
     val userName: String
 )

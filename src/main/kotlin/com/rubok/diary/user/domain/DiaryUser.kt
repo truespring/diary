@@ -12,13 +12,13 @@ data class DiaryUser(
     val id: Long? = null,
 
     @Column(nullable = false)
+    val email: String,
+
+    @Column(nullable = false)
     val username: String,
 
     @Column(nullable = false)
     val password: String,
-
-    @Column(nullable = false)
-    val email: String,
 
     val firstName: String? = null,
 
@@ -28,7 +28,7 @@ data class DiaryUser(
 
     val age: Int? = null,
 
-    val active: Boolean = false,
+    val active: Boolean = true,
 
     val lastLogin: LocalDateTime? = null
 ) : BaseEntity()
