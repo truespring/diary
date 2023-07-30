@@ -19,7 +19,7 @@ spring:
       enabled: true
 
 logging:
-  config: classpath:logs/logback-local.xml
+#  config: classpath:logs/logback-local.xml
   level:
     sql: debug
 server:
