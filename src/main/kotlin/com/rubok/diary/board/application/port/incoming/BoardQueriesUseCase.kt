@@ -4,4 +4,5 @@ import com.rubok.diary.board.adapter.outgoing.persistence.dto.BoardVO
 
 interface BoardQueriesUseCase {
     fun getBoardList(): List<BoardVO>
+    fun getBoardDetail(id: Long): BoardVO
 }

@@ -14,4 +14,8 @@ class BoardQueriesService(
     override fun getBoardList(): List<BoardVO> {
         return boardRepositoryPort.findAll()
     }
+
+    override fun getBoardDetail(id: Long): BoardVO {
+        return boardRepositoryPort.findById(id)
+    }
 }
